@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes de Computadores: O Mundo Conectado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            background-color: #0284c7; /* sky-600 */
+            color: white;
+        }
+        .section-title {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 800px; /* max-w-3xl for content cards */
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 150px; /* Ensure a minimum height for visual consistency */
+        }
+        .quiz-option {
+            cursor: pointer;
+            border: 1px solid #cbd5e1;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .quiz-option:hover {
+            background-color: #f1f5f9; /* slate-100 */
+            border-color: #94a3b8; /* slate-400 */
+        }
+        .quiz-option.correct {
+            background-color: #d1fae5; /* green-100 */
+            border-color: #34d399; /* green-400 */
+        }
+        .quiz-option.incorrect {
+            background-color: #fee2e2; /* red-100 */
+            border-color: #ef4444; /* red-500 */
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <header class="bg-sky-700 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-2xl font-bold">Aula 8: Redes de Computadores</h1>
+            <nav class="mt-2 sm:mt-0">
+                <ul class="flex space-x-2 sm:space-x-4 text-sm sm:text-base">
+                    <li><a href="#introducao" class="nav-link">Introdução</a></li>
+                    <li><a href="#tipos" class="nav-link">Tipos</a></li>
+                    <li><a href="#topologias" class="nav-link">Topologias</a></li>
+                    <li><a href="#dispositivos" class="nav-link">Dispositivos</a></li>
+                    <li><a href="#protocolos" class="nav-link">Protocolos</a></li>
+                    <li><a href="#tcpip" class="nav-link">TCP/IP</a></li>
+                    <li><a href="#wifi" class="nav-link">Wi-Fi</a></li>
+                    <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="introducao" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold text-sky-600 section-title">Redes de Computadores: O Mundo Conectado</h2>
+            <p class="mb-6 text-lg content-card p-6">
+                Esta seção inicial apresenta a base das Redes de Computadores, explicando o que elas são e por que são essenciais no mundo digital. Vamos entender como equipamentos e softwares colaboram para permitir o compartilhamento de recursos e a comunicação global, formando a espinha dorsal da internet.
+            </p>
+            <div class="content-card">
+                <h3 class="text-xl font-semibold text-sky-600 mb-2">O que é uma Rede de Computadores?</h3>
+                <p class="mb-3">É um conjunto de equipamentos e softwares que se ligam e trabalham juntos[cite: 215, 236, 237].</p>
+                <p>O principal objetivo é permitir o compartilhamento de recursos (como impressoras) e a comunicação entre eles[cite: 215, 237].</p>
+            </div>
+        </section>
+
+        <section id="tipos" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold text-sky-600 section-title">Tipos de Rede</h2>
+            <p class="mb-6 text-lg content-card p-6">
+                As redes de computadores variam em tamanho e alcance, desde as mais pessoais até as que conectam continentes inteiros. Compreender esses tipos nos ajuda a classificar e entender as diferentes escalas de conexão digital.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 content-card">
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Redes Pessoais (PAN)</h3>
+                    <p class="mb-3">Conectam dispositivos em curta distância, geralmente usando Bluetooth[cite: 239].</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Ex: Celular e fone de ouvido sem fio.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Redes Locais (LAN)</h3>
+                    <p class="mb-3">Muito utilizadas em locais pequenos como casas e escritórios[cite: 240].</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Geralmente de propriedade privada.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Redes Metropolitanas (MAN)</h3>
+                    <p class="mb-3">Conectam dispositivos em distâncias maiores, na mesma cidade ou bairro, interligando LANs[cite: 241, 242].</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Redes de Longa Distância (WAN)</h3>
+                    <p class="mb-3">Conectam dispositivos em diferentes locais no mundo, englobando várias LANs[cite: 243, 244].</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Ex: A Internet.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="topologias" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold text-sky-600 section-title">Desenhos das Redes: Topologias</h2>
+            <p class="mb-6 text-lg content-card p-6">
+                A topologia de rede descreve o desenho físico de como os dispositivos estão conectados. Esse arranjo influencia diretamente a performance, a confiabilidade e a facilidade de gerenciamento da rede.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 content-card">
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Barramento</h3>
+                    <p class="mb-3">Cada dispositivo conectado a um único cabo principal[cite: 245].</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Simples, mas limitado; falhas no cabo afetam toda a rede.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Anel</h3>
+                    <p class="mb-3">Dispositivos conectados lado a lado, formando um círculo[cite: 248].</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Estrela</h3>
+                    <p class="mb-3">Cada dispositivo se liga a um Hub ou Comutador central[cite: 253].</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Mais comum, fácil de gerenciar; falha de um dispositivo não afeta outros.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Malha</h3>
+                    <p class="mb-3">Todos os dispositivos se conectam entre si[cite: 249].</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Pode ser física (cabos) ou lógica; super resistente a falhas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="dispositivos" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold text-sky-600 section-title">Os "Ajudantes" da Rede: Dispositivos</h2>
+            <p class="mb-6 text-lg content-card p-6">
+                A infraestrutura de rede é composta por diversos dispositivos que trabalham juntos para garantir a transmissão eficiente e segura dos dados. Cada um possui uma função específica, essencial para o funcionamento da comunicação.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 content-card">
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Repetidor</h3>
+                    <p class="mb-3">Dispositivo de duas portas que regenera sinais de rede para estender o alcance[cite: 272, 275].</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Hub</h3>
+                    <p class="mb-3">Atua como um repetidor multiporta, enviando cópias de cada pacote para todos os dispositivos conectados[cite: 279, 282].</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Ponte (Bridge)</h3>
+                    <p class="mb-3">Divide a rede em segmentos e pode filtrar/encaminhar pacotes de dados entre eles usando o endereço MAC[cite: 276, 277].</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Comutador (Switch)</h3>
+                    <p class="mb-3">Combina funcionalidade de ponte e hub, direcionando pacotes de dados diretamente ao dispositivo correto[cite: 287, 288]. Pode ser gerenciado ou não[cite: 293].</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Roteador</h3>
+                    <p class="mb-3">Realiza a vinculação de redes de diferentes alcances, interpretando e filtrando pacotes de dados para encaminhá-los ao destino[cite: 309, 310, 311]. Utiliza o IP do dispositivo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="protocolos" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold text-sky-600 section-title">A "Língua" da Rede: Padrões e Protocolos</h2>
+            <p class="mb-6 text-lg content-card p-6">
+                Para que os dispositivos de rede possam se comunicar de forma padronizada e segura, eles seguem regras e acordos. Padrões governam o hardware e software, enquanto protocolos definem as condições e regras da comunicação.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 content-card">
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Padrões de Rede</h3>
+                    <p class="mb-3">Fornecem uma estrutura que permite a interoperabilidade entre dispositivos[cite: 265].</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>**Ethernet (IEEE 802.3):** Padrão do setor para redes LAN, MAN e WAN, define estrutura de transmissão[cite: 255, 256].</li>
+                        <li>Existem versões como Fast Ethernet (100 Mbps), Gigabit Ethernet (1 Gbps), 10 Gigabit Ethernet (10 Gbps) e Terabit Ethernet (200-400 Gbps)[cite: 257, 259, 262, 263].</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Protocolos de Rede</h3>
+                    <p class="mb-3">Conjunto de condições e regras que especificam como os dispositivos se comunicam[cite: 327].</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>**Endereço MAC:** Identifica o adaptador de rede no nível do hardware[cite: 331].</li>
+                        <li>**Endereço IP:** Identifica o adaptador de rede no nível do software[cite: 332].</li>
+                        <li>**Pacote de Dados (Datagrama):** Unidade de mensagem trocada, contendo dados e cabeçalhos[cite: 333, 335].</li>
+                        <li>**Roteamento:** Mecanismo que verifica pacotes de dados para o caminho de entrega correto[cite: 337].</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="protocolos-essenciais" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold text-sky-600 section-title">Protocolos Essenciais de Comunicação</h2>
+            <p class="mb-6 text-lg content-card p-6">
+                A internet funciona através de diversos protocolos que coordenam as diferentes formas de comunicação. Estes são alguns dos mais fundamentais, divididos em categorias para melhor compreensão.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 content-card">
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Protocolos de Rede e Transporte</h3>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>**TCP (Transmission Control Protocol):** Agrupa dados em pacotes, garante entrega segura e na ordem[cite: 339, 340].</li>
+                        <li>**IP (Internet Protocol):** Responsável pelo endereçamento do pacote de dados[cite: 342, 343].</li>
+                        <li>**UDP (User Datagram Protocol):** Protocolo sem conexão, baixa latência e tolerante a perda[cite: 347, 348].</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Protocolos de Aplicação e E-mail</h3>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>**HTTP (Hypertext Transfer Protocol):** Usado para fornecer conteúdo de página da Web[cite: 349].</li>
+                        <li>**FTP (File Transfer Protocol):** Usado para transferir arquivos entre computadores[cite: 351].</li>
+                        <li>**POP3 (Post Office Protocol 3):** Protocolo de email para recebimento[cite: 354, 355].</li>
+                        <li>**SMTP (Simple Mail Transfer Protocol):** Usado para enviar emails[cite: 357, 358].</li>
+                        <li>**IMAP (Internet Message Access Protocol):** Permite gerenciar caixa de correio no servidor[cite: 360, 361].</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-card mt-6">
+                 <h3 class="text-xl font-semibold text-sky-600 mb-2">Protocolos de Segurança</h3>
+                <ul class="list-disc list-inside ml-4">
+                    <li>**SSL (Secure Sockets Layer) / TLS (Transport Layer Security):** Fornecem conexão segura e criptografada[cite: 362, 363, 364].</li>
+                    <li>**HTTPS:** Versão segura do HTTP usando TLS ou SSL[cite: 368, 369].</li>
+                    <li>**SSH (Secure Shell):** Protocolo criptográfico para conexão de dados segura em rede[cite: 371].</li>
+                    <li>**Kerberos:** Protocolo de validação que fornece autenticação robusta[cite: 374].</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="tcpip" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold text-sky-600 section-title">Organizando a Conversa: Modelo TCP/IP</h2>
+            <p class="mb-6 text-lg content-card p-6">
+                O Modelo TCP/IP é a base da arquitetura da internet, dividindo a comunicação em quatro camadas lógicas. Cada camada tem responsabilidades específicas, trabalhando em conjunto para garantir que os dados sejam transmitidos de forma eficiente e confiável.
+            </p>
+            <div class="content-card">
+                <ul class="list-decimal list-inside ml-4 space-y-2">
+                    <li><strong class="text-sky-700">Camada de Aplicativo:</strong> Lida com a comunicação do aplicativo ou processo (ex: HTTP, SMTP, IMAP)[cite: 382, 383].</li>
+                    <li><strong class="text-sky-700">Camada de Transporte:</strong> Responsável pela comunicação de host para host (TCP e UDP)[cite: 385, 386, 387].</li>
+                    <li><strong class="text-sky-700">Camada de Internet:</strong> Responsável pela troca de datagramas, adiciona endereços IP de origem e destino (ex: IP, ICMP)[cite: 388, 389, 390].</li>
+                    <li><strong class="text-sky-700">Camada de Acesso à Rede:</strong> Define como os dados são enviados pela rede (ex: ARP, MAC, Ethernet, DSL, ISDN)[cite: 391, 392].</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="wifi" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold text-sky-600 section-title">Wi-Fi: A Magia Sem Fio</h2>
+            <p class="mb-6 text-lg content-card p-6">
+                O Wi-Fi revolucionou a forma como nos conectamos à internet, permitindo mobilidade e flexibilidade. Baseado no padrão IEEE 802.11, ele permite que dispositivos se comuniquem sem a necessidade de cabos.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 content-card">
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">O que é Wi-Fi?</h3>
+                    <p class="mb-3">"Wireless Fidelity", significa que o dispositivo é compatível com o padrão **IEEE 802.11** para redes sem fio[cite: 434].</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Permite conexão à internet sem cabos[cite: 229].</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-sky-600 mb-2">Frequências de Transmissão</h3>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>**2.4 GHz:** Mais comum, maior alcance, mais sujeita a interferências[cite: 437].</li>
+                        <li>**5 GHz:** Menos congestionada, menor interferência, melhor desempenho[cite: 437, 443, 444].</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-card mt-6">
+                <h3 class="text-xl font-semibold text-sky-600 mb-2">Evolução do Wi-Fi: Cada Vez Mais Rápido!</h3>
+                <p class="mb-3">Desde 1997, os padrões Wi-Fi evoluíram, resultando em velocidades mais rápidas e maior cobertura[cite: 438].</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>**802.11b:** Padrão mais lento (11 Mbps)[cite: 447, 448].</li>
+                    <li>**802.11g:** 2.4 GHz, mais rápido (54 Mbps)[cite: 450, 451].</li>
+                    <li>**802.11n (Wi-Fi 4):** Aumenta velocidade e alcance (até 140 Mbps teóricos)[cite: 453, 454].</li>
+                    <li>**802.11ac (Wi-Fi 5):** Opera em 5 GHz, velocidades de 433 Mbps até vários Gbps teóricos[cite: 455, 481].</li>
+                    <li>**802.11ax (Wi-Fi 6):** Padrão de última geração, taxas de dados e capacidade mais altas (até 9.6 Gbps), melhor em ambientes densos[cite: 487, 489, 495].</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="quiz" class="mb-12 pt-16 -mt-16">
+            <h2 class="text-3xl font-semibold text-sky-600 section-title">Quiz: Teste Seus Conhecimentos!</h2>
+            <p class="mb-6 text-lg content-card p-6">
+                Chegou a hora de testar o que você aprendeu sobre Redes de Computadores! Responda às perguntas abaixo e veja o quão bem você compreendeu os conceitos da Aula 8. Boa sorte!
+            </p>
+            <div class="content-card">
+                <div id="quiz-container">
+                    <h3 class="text-2xl font-semibold mb-4" id="quiz-question"></h3>
+                    <div id="quiz-options" class="space-y-3"></div>
+                    <div id="quiz-feedback" class="mt-4 text-lg font-medium"></div>
+                    <button id="next-question-btn" class="mt-6 bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 hidden">Próxima Pergunta</button>
+                    <button id="restart-quiz-btn" class="mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 hidden">Reiniciar Quiz</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 text-slate-600 border-t border-slate-300">
+        <p>&copy; <span id="currentYear"></span> Redes de Computadores - Aula 8. Conteúdo adaptado para fins didáticos.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                        document.querySelectorAll('nav .nav-link').forEach(link => link.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Quiz Data
+            const quizQuestions = [
+                {
+                    question: "Qual é o principal objetivo de uma rede de computadores?",
+                    options: [
+                        "Armazenar dados permanentemente.",
+                        "Compartilhar recursos e comunicação entre dispositivos.",
+                        "Apenas jogar online sem interrupções.",
+                        "Conectar um computador a uma impressora apenas."
+                    ],
+                    correctAnswerIndex: 1,
+                    explanation: "O objetivo principal de uma rede de computadores é permitir que vários equipamentos e softwares possam compartilhar recursos (como impressoras ou arquivos) e se comunicar uns com os outros[cite: 215, 237]."
+                },
+                {
+                    question: "Qual tipo de rede é utilizada em locais pequenos, como uma casa ou um escritório, e geralmente é de propriedade privada?",
+                    options: [
+                        "WAN (Longa Distância)",
+                        "PAN (Pessoal)",
+                        "LAN (Local)",
+                        "MAN (Metropolitana)"
+                    ],
+                    correctAnswerIndex: 2,
+                    explanation: "A LAN (Local Area Network) é muito utilizada em locais pequenos como casas e escritórios e geralmente são de propriedade privada[cite: 239, 240]."
+                },
+                {
+                    question: "Em qual topologia de rede todos os dispositivos se conectam a um ponto central (como um Hub ou Comutador)?",
+                    options: [
+                        "Barramento",
+                        "Anel",
+                        "Estrela",
+                        "Malha"
+                    ],
+                    correctAnswerIndex: 2,
+                    explanation: "Na topologia em estrela, que é o tipo mais comum, cada dispositivo se liga a um Hub ou comutador centralizando as conexões[cite: 252, 253]."
+                },
+                {
+                    question: "Qual dispositivo de rede é responsável por conectar redes diferentes, agindo como um 'carteiro' que direciona pacotes entre elas?",
+                    options: [
+                        "Hub",
+                        "Repetidor",
+                        "Comutador",
+                        "Roteador"
+                    ],
+                    correctAnswerIndex: 3,
+                    explanation: "Os roteadores realizam a vinculação das redes de diferentes alcances e são denominados também como Gateway, agindo como um 'carteiro' que interpreta e filtra pacotes para o destino correto[cite: 309, 311]."
+                },
+                {
+                    question: "Qual é o identificador único que identifica o adaptador de rede no nível do hardware (como um 'RG' da placa de rede)?",
+                    options: [
+                        "Endereço IP",
+                        "Endereço MAC",
+                        "Endereço de Portas",
+                        "Endereço de Domínio"
+                    ],
+                    correctAnswerIndex: 1,
+                    explanation: "O endereço MAC (controle de acesso à mídia) identifica o adaptador de rede no nível do hardware, sendo um identificador único[cite: 331]."
+                },
+                {
+                    question: "Qual protocolo é responsável por garantir que os pacotes de dados cheguem completos, na ordem correta e sem erros, em uma comunicação confiável?",
+                    options: [
+                        "UDP",
+                        "IP",
+                        "HTTP",
+                        "TCP"
+                    ],
+                    correctAnswerIndex: 3,
+                    explanation: "O protocolo TCP agrupa dados em pacotes que podem ser enviados de maneira segura e rápida, minimizando a chance de perda de dados e fornecendo um mecanismo estável e confiável para a entrega[cite: 339, 340]."
+                },
+                {
+                    question: "No Modelo TCP/IP, qual camada é responsável pelo endereçamento dos pacotes de dados, incluindo os endereços IP de origem e destino?",
+                    options: [
+                        "Camada de Aplicativo",
+                        "Camada de Transporte",
+                        "Camada de Internet",
+                        "Camada de Acesso à Rede"
+                    ],
+                    correctAnswerIndex: 2,
+                    explanation: "A camada de Internet é responsável pela troca de datagramas, e o cabeçalho adicionado contém informações sobre os endereços IP do remetente e do destinatário[cite: 388, 389]."
+                },
+                {
+                    question: "Qual padrão da IEEE é a base para as redes sem fio, ou Wi-Fi?",
+                    options: [
+                        "IEEE 802.3",
+                        "IEEE 802.11",
+                        "IEEE 802.5",
+                        "IEEE 802.1"
+                    ],
+                    correctAnswerIndex: 1,
+                    explanation: "Wi-Fi significa que o dispositivo é compatível com o padrão 802.11, determinado para redes sem fio[cite: 434]."
+                },
+                {
+                    question: "Qual frequência de transmissão Wi-Fi (entre 2.4 GHz e 5 GHz) é geralmente menos congestionada e oferece melhor desempenho para atividades como voz e vídeo HD?",
+                    options: [
+                        "2.4 GHz",
+                        "5 GHz",
+                        "Ambas têm o mesmo desempenho",
+                        "Nenhuma das anteriores"
+                    ],
+                    correctAnswerIndex: 1,
+                    explanation: "A banda de 5 GHz é menos congestionada que a popular de 2.4 GHz, o que significa menos interferência e melhor desempenho para atividades como voz e vídeo HD[cite: 443, 444]."
+                },
+                {
+                    question: "Qual é a principal característica do padrão Wi-Fi 6 (802.11ax) em comparação com as versões anteriores?",
+                    options: [
+                        "É mais barato para implementar em residências.",
+                        "Oferece velocidades de transmissão mais baixas, mas com maior segurança.",
+                        "Oferece taxas de dados e capacidade mais altas, e melhor desempenho em ambientes com muitos dispositivos.",
+                        "É exclusivo para conexões via satélite."
+                    ],
+                    correctAnswerIndex: 2,
+                    explanation: "O Wi-Fi 6 oferece taxas de dados e capacidade mais altas (até 9.6 Gbps) e foi projetado para evitar o congestionamento do tráfego em espaços públicos e com muitos dispositivos conectados[cite: 230, 488, 489, 495]."
+                }
+            ];
+
+            let currentQuestionIndex = 0;
+            let quizActive = true;
+
+            const quizQuestionElement = document.getElementById('quiz-question');
+            const quizOptionsElement = document.getElementById('quiz-options');
+            const quizFeedbackElement = document.getElementById('quiz-feedback');
+            const nextQuestionBtn = document.getElementById('next-question-btn');
+            const restartQuizBtn = document.getElementById('restart-quiz-btn');
+
+            function loadQuestion() {
+                if (currentQuestionIndex < quizQuestions.length) {
+                    const questionData = quizQuestions[currentQuestionIndex];
+                    quizQuestionElement.textContent = `Pergunta ${currentQuestionIndex + 1}: ${questionData.question}`;
+                    quizOptionsElement.innerHTML = '';
+                    quizFeedbackElement.textContent = '';
+                    nextQuestionBtn.classList.add('hidden');
+
+                    questionData.options.forEach((option, index) => {
+                        const optionElement = document.createElement('div');
+                        optionElement.textContent = option;
+                        optionElement.classList.add('quiz-option');
+                        optionElement.dataset.index = index;
+                        optionElement.addEventListener('click', handleOptionClick);
+                        quizOptionsElement.appendChild(optionElement);
+                    });
+                    quizOptionsElement.classList.remove('pointer-events-none'); // Enable clicks
+                } else {
+                    displayQuizResults();
+                }
+            }
+
+            function handleOptionClick(event) {
+                if (!quizActive) return;
+
+                const selectedOption = event.target;
+                const selectedIndex = parseInt(selectedOption.dataset.index);
+                const questionData = quizQuestions[currentQuestionIndex];
+
+                // Disable further clicks for this question
+                quizOptionsElement.classList.add('pointer-events-none');
+                Array.from(quizOptionsElement.children).forEach(option => {
+                    option.removeEventListener('click', handleOptionClick);
+                });
+
+                if (selectedIndex === questionData.correctAnswerIndex) {
+                    selectedOption.classList.add('correct');
+                    quizFeedbackElement.innerHTML = `Parabéns! Você acertou! 🎉<br><small>${questionData.explanation}</small>`;
+                    quizFeedbackElement.classList.remove('text-red-600');
+                    quizFeedbackElement.classList.add('text-green-600');
+                } else {
+                    selectedOption.classList.add('incorrect');
+                    // Highlight correct answer
+                    quizOptionsElement.children[questionData.correctAnswerIndex].classList.add('correct');
+                    quizFeedbackElement.innerHTML = `Ops! Você errou. A resposta correta era: "${questionData.options[questionData.correctAnswerIndex]}".<br><small>${questionData.explanation}</small>`;
+                    quizFeedbackElement.classList.remove('text-green-600');
+                    quizFeedbackElement.classList.add('text-red-600');
+                }
+                nextQuestionBtn.classList.remove('hidden');
+            }
+
+            function displayQuizResults() {
+                quizQuestionElement.textContent = "Quiz Finalizado!";
+                quizOptionsElement.innerHTML = `<p class="text-xl text-center">Você concluiu todas as perguntas. Parabéns pelo seu esforço!</p>`;
+                quizFeedbackElement.textContent = "";
+                nextQuestionBtn.classList.add('hidden');
+                restartQuizBtn.classList.remove('hidden');
+                quizActive = false; // Deactivate quiz until restart
+            }
+
+            function restartQuiz() {
+                currentQuestionIndex = 0;
+                quizActive = true;
+                restartQuizBtn.classList.add('hidden');
+                loadQuestion();
+            }
+
+            nextQuestionBtn.addEventListener('click', () => {
+                currentQuestionIndex++;
+                loadQuestion();
+            });
+
+            restartQuizBtn.addEventListener('click', restartQuiz);
+
+            loadQuestion(); // Initial load of the first question
+
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
