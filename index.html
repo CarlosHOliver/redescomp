@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redes de Computadores: O Mundo Conectado</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Visualization & Content Choices:
+        - All content: Textual explanations, lists, and conceptual descriptions (HTML/CSS). Goal: Inform. Interaction: Navigation, quiz. Justification: Core concepts are best conveyed through clear text and structured lists for beginners.
+        - Quiz: Interactive multiple-choice questions (HTML/CSS/JS). Goal: Engage and Assess Understanding. Interaction: Click to select, immediate feedback with explanation. Justification: Active learning and self-assessment, tailored for an introductory audience.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body { font-family: 'Inter', sans-serif; }
         .nav-link {
@@ -81,8 +85,8 @@
             </p>
             <div class="content-card">
                 <h3 class="text-xl font-semibold text-sky-600 mb-2">O que é uma Rede de Computadores?</h3>
-                <p class="mb-3">É um conjunto de equipamentos e softwares que se ligam e trabalham juntos[cite: 215, 236, 237].</p>
-                <p>O principal objetivo é permitir o compartilhamento de recursos (como impressoras) e a comunicação entre eles[cite: 215, 237].</p>
+                <p class="mb-3">É um conjunto de equipamentos e softwares que se ligam e trabalham juntos.</p>
+                <p>O principal objetivo é permitir o compartilhamento de recursos (como impressoras) e a comunicação entre eles.</p>
             </div>
         </section>
 
@@ -94,25 +98,25 @@
             <div class="grid md:grid-cols-2 gap-6 content-card">
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Redes Pessoais (PAN)</h3>
-                    <p class="mb-3">Conectam dispositivos em curta distância, geralmente usando Bluetooth[cite: 239].</p>
+                    <p class="mb-3">Conectam dispositivos em curta distância, geralmente usando Bluetooth.</p>
                     <ul class="list-disc list-inside ml-4">
                         <li>Ex: Celular e fone de ouvido sem fio.</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Redes Locais (LAN)</h3>
-                    <p class="mb-3">Muito utilizadas em locais pequenos como casas e escritórios[cite: 240].</p>
+                    <p class="mb-3">Muito utilizadas em locais pequenos como casas e escritórios.</p>
                     <ul class="list-disc list-inside ml-4">
                         <li>Geralmente de propriedade privada.</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Redes Metropolitanas (MAN)</h3>
-                    <p class="mb-3">Conectam dispositivos em distâncias maiores, na mesma cidade ou bairro, interligando LANs[cite: 241, 242].</p>
+                    <p class="mb-3">Conectam dispositivos em distâncias maiores, na mesma cidade ou bairro, interligando LANs.</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Redes de Longa Distância (WAN)</h3>
-                    <p class="mb-3">Conectam dispositivos em diferentes locais no mundo, englobando várias LANs[cite: 243, 244].</p>
+                    <p class="mb-3">Conectam dispositivos em diferentes locais no mundo, englobando várias LANs.</p>
                     <ul class="list-disc list-inside ml-4">
                         <li>Ex: A Internet.</li>
                     </ul>
@@ -128,25 +132,25 @@
             <div class="grid md:grid-cols-2 gap-6 content-card">
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Barramento</h3>
-                    <p class="mb-3">Cada dispositivo conectado a um único cabo principal[cite: 245].</p>
+                    <p class="mb-3">Cada dispositivo conectado a um único cabo principal.</p>
                     <ul class="list-disc list-inside ml-4">
                         <li>Simples, mas limitado; falhas no cabo afetam toda a rede.</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Anel</h3>
-                    <p class="mb-3">Dispositivos conectados lado a lado, formando um círculo[cite: 248].</p>
+                    <p class="mb-3">Dispositivos conectados lado a lado, formando um círculo.</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Estrela</h3>
-                    <p class="mb-3">Cada dispositivo se liga a um Hub ou Comutador central[cite: 253].</p>
+                    <p class="mb-3">Cada dispositivo se liga a um Hub ou Comutador central.</p>
                     <ul class="list-disc list-inside ml-4">
                         <li>Mais comum, fácil de gerenciar; falha de um dispositivo não afeta outros.</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Malha</h3>
-                    <p class="mb-3">Todos os dispositivos se conectam entre si[cite: 249].</p>
+                    <p class="mb-3">Todos os dispositivos se conectam entre si.</p>
                     <ul class="list-disc list-inside ml-4">
                         <li>Pode ser física (cabos) ou lógica; super resistente a falhas.</li>
                     </ul>
@@ -162,23 +166,23 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 content-card">
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Repetidor</h3>
-                    <p class="mb-3">Dispositivo de duas portas que regenera sinais de rede para estender o alcance[cite: 272, 275].</p>
+                    <p class="mb-3">Dispositivo de duas portas que regenera sinais de rede para estender o alcance.</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Hub</h3>
-                    <p class="mb-3">Atua como um repetidor multiporta, enviando cópias de cada pacote para todos os dispositivos conectados[cite: 279, 282].</p>
+                    <p class="mb-3">Atua como um repetidor multiporta, enviando cópias de cada pacote para todos os dispositivos conectados.</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Ponte (Bridge)</h3>
-                    <p class="mb-3">Divide a rede em segmentos e pode filtrar/encaminhar pacotes de dados entre eles usando o endereço MAC[cite: 276, 277].</p>
+                    <p class="mb-3">Divide a rede em segmentos e pode filtrar/encaminhar pacotes de dados entre eles usando o endereço MAC.</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Comutador (Switch)</h3>
-                    <p class="mb-3">Combina funcionalidade de ponte e hub, direcionando pacotes de dados diretamente ao dispositivo correto[cite: 287, 288]. Pode ser gerenciado ou não[cite: 293].</p>
+                    <p class="mb-3">Combina funcionalidade de ponte e hub, direcionando pacotes de dados diretamente ao dispositivo correto. Pode ser gerenciado ou não.</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Roteador</h3>
-                    <p class="mb-3">Realiza a vinculação de redes de diferentes alcances, interpretando e filtrando pacotes de dados para encaminhá-los ao destino[cite: 309, 310, 311]. Utiliza o IP do dispositivo.</p>
+                    <p class="mb-3">Realiza a vinculação de redes de diferentes alcances, interpretando e filtrando pacotes de dados para encaminhá-los ao destino. Utiliza o IP do dispositivo.</p>
                 </div>
             </div>
         </section>
@@ -191,20 +195,20 @@
             <div class="grid md:grid-cols-2 gap-6 content-card">
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Padrões de Rede</h3>
-                    <p class="mb-3">Fornecem uma estrutura que permite a interoperabilidade entre dispositivos[cite: 265].</p>
+                    <p class="mb-3">Fornecem uma estrutura que permite a interoperabilidade entre dispositivos.</p>
                     <ul class="list-disc list-inside ml-4">
-                        <li>**Ethernet (IEEE 802.3):** Padrão do setor para redes LAN, MAN e WAN, define estrutura de transmissão[cite: 255, 256].</li>
-                        <li>Existem versões como Fast Ethernet (100 Mbps), Gigabit Ethernet (1 Gbps), 10 Gigabit Ethernet (10 Gbps) e Terabit Ethernet (200-400 Gbps)[cite: 257, 259, 262, 263].</li>
+                        <li>**Ethernet (IEEE 802.3):** Padrão do setor para redes LAN, MAN e WAN, define estrutura de transmissão.</li>
+                        <li>Existem versões como Fast Ethernet (100 Mbps), Gigabit Ethernet (1 Gbps), 10 Gigabit Ethernet (10 Gbps) e Terabit Ethernet (200-400 Gbps).</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Protocolos de Rede</h3>
-                    <p class="mb-3">Conjunto de condições e regras que especificam como os dispositivos se comunicam[cite: 327].</p>
+                    <p class="mb-3">Conjunto de condições e regras que especificam como os dispositivos se comunicam.</p>
                     <ul class="list-disc list-inside ml-4">
-                        <li>**Endereço MAC:** Identifica o adaptador de rede no nível do hardware[cite: 331].</li>
-                        <li>**Endereço IP:** Identifica o adaptador de rede no nível do software[cite: 332].</li>
-                        <li>**Pacote de Dados (Datagrama):** Unidade de mensagem trocada, contendo dados e cabeçalhos[cite: 333, 335].</li>
-                        <li>**Roteamento:** Mecanismo que verifica pacotes de dados para o caminho de entrega correto[cite: 337].</li>
+                        <li>**Endereço MAC:** Identifica o adaptador de rede no nível do hardware.</li>
+                        <li>**Endereço IP:** Identifica o adaptador de rede no nível do software.</li>
+                        <li>**Pacote de Dados (Datagrama):** Unidade de mensagem trocada, contendo dados e cabeçalhos.</li>
+                        <li>**Roteamento:** Mecanismo que verifica pacotes de dados para o caminho de entrega correto.</li>
                     </ul>
                 </div>
             </div>
@@ -219,29 +223,29 @@
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Protocolos de Rede e Transporte</h3>
                     <ul class="list-disc list-inside ml-4">
-                        <li>**TCP (Transmission Control Protocol):** Agrupa dados em pacotes, garante entrega segura e na ordem[cite: 339, 340].</li>
-                        <li>**IP (Internet Protocol):** Responsável pelo endereçamento do pacote de dados[cite: 342, 343].</li>
-                        <li>**UDP (User Datagram Protocol):** Protocolo sem conexão, baixa latência e tolerante a perda[cite: 347, 348].</li>
+                        <li>**TCP (Transmission Control Protocol):** Agrupa dados em pacotes, garante entrega segura e na ordem.</li>
+                        <li>**IP (Internet Protocol):** Responsável pelo endereçamento do pacote de dados.</li>
+                        <li>**UDP (User Datagram Protocol):** Protocolo sem conexão, baixa latência e tolerante a perda.</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Protocolos de Aplicação e E-mail</h3>
                     <ul class="list-disc list-inside ml-4">
-                        <li>**HTTP (Hypertext Transfer Protocol):** Usado para fornecer conteúdo de página da Web[cite: 349].</li>
-                        <li>**FTP (File Transfer Protocol):** Usado para transferir arquivos entre computadores[cite: 351].</li>
-                        <li>**POP3 (Post Office Protocol 3):** Protocolo de email para recebimento[cite: 354, 355].</li>
-                        <li>**SMTP (Simple Mail Transfer Protocol):** Usado para enviar emails[cite: 357, 358].</li>
-                        <li>**IMAP (Internet Message Access Protocol):** Permite gerenciar caixa de correio no servidor[cite: 360, 361].</li>
+                        <li>**HTTP (Hypertext Transfer Protocol):** Usado para fornecer conteúdo de página da Web.</li>
+                        <li>**FTP (File Transfer Protocol):** Usado para transferir arquivos entre computadores.</li>
+                        <li>**POP3 (Post Office Protocol 3):** Protocolo de email para recebimento.</li>
+                        <li>**SMTP (Simple Mail Transfer Protocol):** Usado para enviar emails.</li>
+                        <li>**IMAP (Internet Message Access Protocol):** Permite gerenciar caixa de correio no servidor.</li>
                     </ul>
                 </div>
             </div>
             <div class="content-card mt-6">
                  <h3 class="text-xl font-semibold text-sky-600 mb-2">Protocolos de Segurança</h3>
                 <ul class="list-disc list-inside ml-4">
-                    <li>**SSL (Secure Sockets Layer) / TLS (Transport Layer Security):** Fornecem conexão segura e criptografada[cite: 362, 363, 364].</li>
-                    <li>**HTTPS:** Versão segura do HTTP usando TLS ou SSL[cite: 368, 369].</li>
-                    <li>**SSH (Secure Shell):** Protocolo criptográfico para conexão de dados segura em rede[cite: 371].</li>
-                    <li>**Kerberos:** Protocolo de validação que fornece autenticação robusta[cite: 374].</li>
+                    <li>**SSL (Secure Sockets Layer) / TLS (Transport Layer Security):** Fornecem conexão segura e criptografada.</li>
+                    <li>**HTTPS:** Versão segura do HTTP usando TLS ou SSL.</li>
+                    <li>**SSH (Secure Shell):** Protocolo criptográfico para conexão de dados segura em rede.</li>
+                    <li>**Kerberos:** Protocolo de validação que fornece autenticação robusta.</li>
                 </ul>
             </div>
         </section>
@@ -253,10 +257,10 @@
             </p>
             <div class="content-card">
                 <ul class="list-decimal list-inside ml-4 space-y-2">
-                    <li><strong class="text-sky-700">Camada de Aplicativo:</strong> Lida com a comunicação do aplicativo ou processo (ex: HTTP, SMTP, IMAP)[cite: 382, 383].</li>
-                    <li><strong class="text-sky-700">Camada de Transporte:</strong> Responsável pela comunicação de host para host (TCP e UDP)[cite: 385, 386, 387].</li>
-                    <li><strong class="text-sky-700">Camada de Internet:</strong> Responsável pela troca de datagramas, adiciona endereços IP de origem e destino (ex: IP, ICMP)[cite: 388, 389, 390].</li>
-                    <li><strong class="text-sky-700">Camada de Acesso à Rede:</strong> Define como os dados são enviados pela rede (ex: ARP, MAC, Ethernet, DSL, ISDN)[cite: 391, 392].</li>
+                    <li><strong class="text-sky-700">Camada de Aplicativo:</strong> Lida com a comunicação do aplicativo ou processo (ex: HTTP, SMTP, IMAP).</li>
+                    <li><strong class="text-sky-700">Camada de Transporte:</strong> Responsável pela comunicação de host para host (TCP e UDP).</li>
+                    <li><strong class="text-sky-700">Camada de Internet:</strong> Responsável pela troca de datagramas, adiciona endereços IP de origem e destino (ex: IP, ICMP).</li>
+                    <li><strong class="text-sky-700">Camada de Acesso à Rede:</strong> Define como os dados são enviados pela rede (ex: ARP, MAC, Ethernet, DSL, ISDN).</li>
                 </ul>
             </div>
         </section>
@@ -269,28 +273,28 @@
             <div class="grid md:grid-cols-2 gap-6 content-card">
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">O que é Wi-Fi?</h3>
-                    <p class="mb-3">"Wireless Fidelity", significa que o dispositivo é compatível com o padrão **IEEE 802.11** para redes sem fio[cite: 434].</p>
+                    <p class="mb-3">"Wireless Fidelity", significa que o dispositivo é compatível com o padrão **IEEE 802.11** para redes sem fio.</p>
                     <ul class="list-disc list-inside ml-4">
-                        <li>Permite conexão à internet sem cabos[cite: 229].</li>
+                        <li>Permite conexão à internet sem cabos.</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-sky-600 mb-2">Frequências de Transmissão</h3>
                     <ul class="list-disc list-inside ml-4">
-                        <li>**2.4 GHz:** Mais comum, maior alcance, mais sujeita a interferências[cite: 437].</li>
-                        <li>**5 GHz:** Menos congestionada, menor interferência, melhor desempenho[cite: 437, 443, 444].</li>
+                        <li>**2.4 GHz:** Mais comum, maior alcance, mais sujeita a interferências.</li>
+                        <li>**5 GHz:** Menos congestionada, menor interferência, melhor desempenho.</li>
                     </ul>
                 </div>
             </div>
             <div class="content-card mt-6">
                 <h3 class="text-xl font-semibold text-sky-600 mb-2">Evolução do Wi-Fi: Cada Vez Mais Rápido!</h3>
-                <p class="mb-3">Desde 1997, os padrões Wi-Fi evoluíram, resultando em velocidades mais rápidas e maior cobertura[cite: 438].</p>
+                <p class="mb-3">Desde 1997, os padrões Wi-Fi evoluíram, resultando em velocidades mais rápidas e maior cobertura.</p>
                 <ul class="list-disc list-inside ml-4">
-                    <li>**802.11b:** Padrão mais lento (11 Mbps)[cite: 447, 448].</li>
-                    <li>**802.11g:** 2.4 GHz, mais rápido (54 Mbps)[cite: 450, 451].</li>
-                    <li>**802.11n (Wi-Fi 4):** Aumenta velocidade e alcance (até 140 Mbps teóricos)[cite: 453, 454].</li>
-                    <li>**802.11ac (Wi-Fi 5):** Opera em 5 GHz, velocidades de 433 Mbps até vários Gbps teóricos[cite: 455, 481].</li>
-                    <li>**802.11ax (Wi-Fi 6):** Padrão de última geração, taxas de dados e capacidade mais altas (até 9.6 Gbps), melhor em ambientes densos[cite: 487, 489, 495].</li>
+                    <li>**802.11b:** Padrão mais lento (11 Mbps).</li>
+                    <li>**802.11g:** 2.4 GHz, mais rápido (54 Mbps).</li>
+                    <li>**802.11n (Wi-Fi 4):** Aumenta velocidade e alcance (até 140 Mbps teóricos).</li>
+                    <li>**802.11ac (Wi-Fi 5):** Opera em 5 GHz, velocidades de 433 Mbps até vários Gbps teóricos.</li>
+                    <li>**802.11ax (Wi-Fi 6):** Padrão de última geração, taxas de dados e capacidade mais altas (até 9.6 Gbps), melhor em ambientes densos.</li>
                 </ul>
             </div>
         </section>
@@ -313,7 +317,7 @@
     </main>
 
     <footer class="text-center py-8 text-slate-600 border-t border-slate-300">
-        <p>&copy; <span id="currentYear"></span> Redes de Computadores - Aula 8. Conteúdo adaptado para fins didáticos.</p>
+        <p>&copy; <span id="currentYear"></span> Feito por Carlos Henrique - Eng. Computação.</p>
     </footer>
 
     <script>
@@ -350,7 +354,7 @@
                         "Conectar um computador a uma impressora apenas."
                     ],
                     correctAnswerIndex: 1,
-                    explanation: "O objetivo principal de uma rede de computadores é permitir que vários equipamentos e softwares possam compartilhar recursos (como impressoras ou arquivos) e se comunicar uns com os outros[cite: 215, 237]."
+                    explanation: "O objetivo principal de uma rede de computadores é permitir que vários equipamentos e softwares possam compartilhar recursos (como impressoras ou arquivos) e se comunicar uns com os outros."
                 },
                 {
                     question: "Qual tipo de rede é utilizada em locais pequenos, como uma casa ou um escritório, e geralmente é de propriedade privada?",
@@ -361,7 +365,7 @@
                         "MAN (Metropolitana)"
                     ],
                     correctAnswerIndex: 2,
-                    explanation: "A LAN (Local Area Network) é muito utilizada em locais pequenos como casas e escritórios e geralmente são de propriedade privada[cite: 239, 240]."
+                    explanation: "A LAN (Local Area Network) é muito utilizada em locais pequenos como casas e escritórios e geralmente são de propriedade privada."
                 },
                 {
                     question: "Em qual topologia de rede todos os dispositivos se conectam a um ponto central (como um Hub ou Comutador)?",
@@ -372,7 +376,7 @@
                         "Malha"
                     ],
                     correctAnswerIndex: 2,
-                    explanation: "Na topologia em estrela, que é o tipo mais comum, cada dispositivo se liga a um Hub ou comutador centralizando as conexões[cite: 252, 253]."
+                    explanation: "Na topologia em estrela, que é o tipo mais comum, cada dispositivo se liga a um Hub ou comutador centralizando as conexões."
                 },
                 {
                     question: "Qual dispositivo de rede é responsável por conectar redes diferentes, agindo como um 'carteiro' que direciona pacotes entre elas?",
@@ -383,7 +387,7 @@
                         "Roteador"
                     ],
                     correctAnswerIndex: 3,
-                    explanation: "Os roteadores realizam a vinculação das redes de diferentes alcances e são denominados também como Gateway, agindo como um 'carteiro' que interpreta e filtra pacotes para o destino correto[cite: 309, 311]."
+                    explanation: "Os roteadores realizam a vinculação das redes de diferentes alcances e são denominados também como Gateway, agindo como um 'carteiro' que interpreta e filtra pacotes para o destino correto."
                 },
                 {
                     question: "Qual é o identificador único que identifica o adaptador de rede no nível do hardware (como um 'RG' da placa de rede)?",
@@ -394,7 +398,7 @@
                         "Endereço de Domínio"
                     ],
                     correctAnswerIndex: 1,
-                    explanation: "O endereço MAC (controle de acesso à mídia) identifica o adaptador de rede no nível do hardware, sendo um identificador único[cite: 331]."
+                    explanation: "O endereço MAC (controle de acesso à mídia) identifica o adaptador de rede no nível do hardware, sendo um identificador único."
                 },
                 {
                     question: "Qual protocolo é responsável por garantir que os pacotes de dados cheguem completos, na ordem correta e sem erros, em uma comunicação confiável?",
@@ -405,7 +409,7 @@
                         "TCP"
                     ],
                     correctAnswerIndex: 3,
-                    explanation: "O protocolo TCP agrupa dados em pacotes que podem ser enviados de maneira segura e rápida, minimizando a chance de perda de dados e fornecendo um mecanismo estável e confiável para a entrega[cite: 339, 340]."
+                    explanation: "O protocolo TCP agrupa dados em pacotes que podem ser enviados de maneira segura e rápida, minimizando a chance de perda de dados e fornecendo um mecanismo estável e confiável para a entrega."
                 },
                 {
                     question: "No Modelo TCP/IP, qual camada é responsável pelo endereçamento dos pacotes de dados, incluindo os endereços IP de origem e destino?",
@@ -416,7 +420,7 @@
                         "Camada de Acesso à Rede"
                     ],
                     correctAnswerIndex: 2,
-                    explanation: "A camada de Internet é responsável pela troca de datagramas, e o cabeçalho adicionado contém informações sobre os endereços IP do remetente e do destinatário[cite: 388, 389]."
+                    explanation: "A camada de Internet é responsável pela troca de datagramas, e o cabeçalho adicionado contém informações sobre os endereços IP do remetente e do destinatário."
                 },
                 {
                     question: "Qual padrão da IEEE é a base para as redes sem fio, ou Wi-Fi?",
@@ -427,7 +431,7 @@
                         "IEEE 802.1"
                     ],
                     correctAnswerIndex: 1,
-                    explanation: "Wi-Fi significa que o dispositivo é compatível com o padrão 802.11, determinado para redes sem fio[cite: 434]."
+                    explanation: "Wi-Fi significa que o dispositivo é compatível com o padrão 802.11, determinado para redes sem fio."
                 },
                 {
                     question: "Qual frequência de transmissão Wi-Fi (entre 2.4 GHz e 5 GHz) é geralmente menos congestionada e oferece melhor desempenho para atividades como voz e vídeo HD?",
@@ -438,7 +442,7 @@
                         "Nenhuma das anteriores"
                     ],
                     correctAnswerIndex: 1,
-                    explanation: "A banda de 5 GHz é menos congestionada que a popular de 2.4 GHz, o que significa menos interferência e melhor desempenho para atividades como voz e vídeo HD[cite: 443, 444]."
+                    explanation: "A banda de 5 GHz é menos congestionada que a popular de 2.4 GHz, o que significa menos interferência e melhor desempenho para atividades como voz e vídeo HD."
                 },
                 {
                     question: "Qual é a principal característica do padrão Wi-Fi 6 (802.11ax) em comparação com as versões anteriores?",
@@ -449,7 +453,7 @@
                         "É exclusivo para conexões via satélite."
                     ],
                     correctAnswerIndex: 2,
-                    explanation: "O Wi-Fi 6 oferece taxas de dados e capacidade mais altas (até 9.6 Gbps) e foi projetado para evitar o congestionamento do tráfego em espaços públicos e com muitos dispositivos conectados[cite: 230, 488, 489, 495]."
+                    explanation: "O Wi-Fi 6 oferece taxas de dados e capacidade mais altas (até 9.6 Gbps) e foi projetado para evitar o congestionamento do tráfego em espaços públicos e com muitos dispositivos conectados."
                 }
             ];
 
